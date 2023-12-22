@@ -16,15 +16,25 @@ If you're also interested in low-level programming with C, consider forking this
 git clone https://github.com/your-username/low-level-c-learning.git
 cd low-level-c-learning
 ```
+
 Make sure you have a C compiler installed (e.g., GCC or Clang) to experiment with the examples and exercises.
 
 Install GCC on macOS
-```
+
+```bash
 brew install gcc
 ```
+
 Install GCC on Windows (using MinGW)
--  Download and follow the installation instructions from [https://mingw-w64.org](https://mingw-w64.org)
+
+- Download and follow the installation instructions from
+- [https://www.mingw-w64.org/downloads/](https://www.mingw-w64.org/downloads/)
+- [https://www.msys2.org/](https://www.msys2.org/)
+
+### Happy coding and learning!
+
 <!--
+
 ## Topics Covered
 
 My learning journey covers various low-level programming topics, including:
@@ -56,4 +66,3 @@ I would like to express my gratitude to the online programming community, educat
 
 This repository is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 -->
-Happy coding and learning!
