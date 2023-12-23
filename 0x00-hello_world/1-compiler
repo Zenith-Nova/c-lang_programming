@@ -1,0 +1,5 @@
+#!/bin/bash
+# Setting the environment variable CFILE to the value "main.c"
+export CFILE=main.c
+# Invoking the GCC compiler with the -S option to perform compilation
+gcc -S $CFILE -o ${CFILE%.c}.o

@@ -1,5 +1,5 @@
 #!/bin/bash
 # Setting the environment variable CFILE to the value "main.c"
-export CFILE=0x00-hello_world/main.c
+export CFILE=main.c
 # Invoking the GCC compiler with the -E option to perform preprocessing
 gcc -E $CFILE
