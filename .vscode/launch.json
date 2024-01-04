@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/gky/My-Projects-Github-Zenith-Nova/c-lang_programming",
-      "program": "/home/gky/My-Projects-Github-Zenith-Nova/c-lang_programming/build/Debug/outDebug",
+      "cwd": "/home/gky/Desktop/My-Projects-Github-Zenith-Nova/c-lang_programming/0x00-hello_world",
+      "program": "/home/gky/Desktop/My-Projects-Github-Zenith-Nova/c-lang_programming/0x00-hello_world/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
