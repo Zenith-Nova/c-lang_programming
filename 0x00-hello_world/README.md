@@ -393,38 +393,418 @@ examples:
 
 1.  **Basic Expressions**
 
-           - Numbers, variables, Arithmetics, function calls
-           - Numbers can be decimals, octal or hexadecimal
-             - The value of a variable is the value it contains
-             - The value of a functions is its return value
+- Numbers, variables, Arithmetics, function calls
 
-    **characters**
+  - Numbers can be decimals, octal or hexadecimal
+  - The value of a variable is the value it contains
+  - The value of a functions is its return value
 
-           - single letter word
-           - usually enclosed using single quotes
-           - The value of a character is its ASCII code
-             - `man ascii`
-           - example:
+2.  **characters**
 
-             ```c
-             'H' /* its value is 72 */
-             ```
+- single letter word
+  - usually enclosed using single quotes
 
-    **strings**
+```c
+'H' /* its value is 72 */
+```
 
-        - Strings in C are sequences of characters represented as arrays of characters
-        - Unlike some other programming languages, C does not have a built-in string data type.
-        - Instead, strings are typically represented as arrays of characters, terminated by a null character ('\0'). - Here are some key points about strings in C:
+3.  **strings**
 
-        ```c
-            #include <stdio.h>
-            #include <string.h>
+- Strings in C are sequences of characters represented as arrays of characters
+  - Unlike some other programming languages, C does not have a built-in string data type.
+  - Instead, strings are typically represented as arrays of characters, terminated by a null character ('\0'). - Here are some key points about strings in C:
 
-            int main()
-            {
-                /* declaration and initialization */
-                char greeting1[] = "Hello, World!";
-                char greeting2[20]; /* allocate space for 20 characters */
-                strcpy(greeting2, "Hello again!");
-            }
-        ```
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    /* declaration and initialization */
+    char greeting1[] = "Hello, World!";
+    char greeting2[20]; /* allocate space for 20 characters */
+    strcpy(greeting2, "Hello again!");
+}
+```
+
+### Arithmetic operators
+
+```c
++ // addition
+- // subtraction
+* //multiplication
+/ // division
+% // modulo(integer remainder)
+() // paranthesis - changes the precedence of operators
+
+++, -- (increment, decrement)
+```
+
+**Affectations**
+
+- change the content of a variable
+- syntax:
+
+```c
+// var_name = expression
+// example
+a = 1;
+a = 32 + 3;
+b = func(1024, a + b);
+```
+
+**Affectations | element of arrays and structures**
+syntax
+
+> var_array[expression] = expression;
+> var_struct.field_name = expression;
+> example
+
+```c
+// array
+a[0] = b - 32;
+a[b + 1] = 1337;
+// struct
+s.age = 32 / 2 +f();
+s.p[3] = 0;
+aa[98].t[b  * 2] = f2(b + 1, 1337 / 2) + 402;
+```
+
+**comparisons**
+|symbol | name |
+|-------|-------------------------|
+| < |less than |
+| <= | less than or equal to |
+| == | equal to |
+| >= | greater than or equal to|
+| > |greater than |
+| != |not equal |
+
+> **Logical operators**
+
+> true is 1
+> false is 0
+> **_AND && =_** true if whole expression is true, false otherwise
+> **_OR || =_** true if one of expression is true, false otherwise
+> **_NOT ! =_** negate, true is false and vice versa
+
+Logical operators are used to perform logical operations on boolean values (i.e., expressions that evaluate to either true or false). The logical operators in C include:
+
+1. **Logical AND (`&&`):**
+
+   - Returns true if both operands are true.
+   - Returns false if at least one operand is false.
+
+   ```c
+   int a = 5;
+   int b = 3;
+
+   if (a > 0 && b > 0) {
+       // This block will execute because both conditions are true.
+   }
+   ```
+
+2. **Logical OR (`||`):**
+
+   - Returns true if at least one operand is true.
+   - Returns false if both operands are false.
+
+   ```c
+   int a = 5;
+   int b = 3;
+
+   if (a > 0 || b > 0) {
+       // This block will execute because at least one condition is true.
+   }
+   ```
+
+3. **Logical NOT (`!`):**
+
+   - Returns true if the operand is false.
+   - Returns false if the operand is true.
+
+   ```c
+   int a = 5;
+
+   if (!(a > 0)) {
+       // This block will not execute because the condition is false.
+   }
+   ```
+
+Logical operators are often used in conditional statements (`if`, `else`, `while`, etc.) to control the flow of a program based on certain conditions. The result of a logical operation is always a boolean value: either true (1) or false (0).
+
+Here's a more complex example that uses both logical AND and logical OR:
+
+```c
+int age = 25;
+int height = 160;
+
+if (age >= 18 && height >= 150) {
+    // This block will execute because both conditions are true.
+    printf("You are eligible for the ride.\n");
+} else {
+    // This block will execute if at least one condition is false.
+    printf("You are not eligible for the ride.\n");
+}
+```
+
+In this example, the person is eligible for a ride only if they are 18 years or older (`age >= 18`) and their height is 150 cm or taller (`height >= 150`). The logical AND (`&&`) ensures that both conditions must be true for the overall expression to be true. If either condition is false, the program goes to the `else` block.
+
+**Example**
+
+```c
+a || b
+a && 32 - f(b + c)
+!(a == b)
+```
+
+> **Bitwise Operator**,
+> **| OR**,
+> **& AND**,
+> **<< LEFT SHIFT**,
+> **>> RIGHT SHIFT**,
+> **^ XOR**,
+> **~ NOT**,
+
+Bitwise operators are used to perform operations on individual bits of integers. There are six bitwise operators in C: AND (`&`), OR (`|`), XOR (`^`), NOT (`~`), left shift (`<<`), and right shift (`>>`). Here's an explanation of each bitwise operator along with examples:
+
+1. **AND (`&`):**
+
+   - Performs a bitwise AND operation.
+   - Sets a bit to 1 only if both corresponding bits are 1.
+
+   ```c
+   int a = 5;  // Binary: 0101
+   int b = 3;  // Binary: 0011
+   int result = a & b;  // Binary: 0001 (1 in decimal)
+   ```
+
+2. **OR (`|`):**
+
+   - Performs a bitwise OR operation.
+   - Sets a bit to 1 if at least one corresponding bit is 1.
+
+   ```c
+   int a = 5;  // Binary: 0101
+   int b = 3;  // Binary: 0011
+   int result = a | b;  // Binary: 0111 (7 in decimal)
+   ```
+
+3. **XOR (`^`):**
+
+   - Performs a bitwise XOR (exclusive OR) operation.
+   - Sets a bit to 1 if only one of the corresponding bits is 1.
+
+   ```c
+   int a = 5;  // Binary: 0101
+   int b = 3;  // Binary: 0011
+   int result = a ^ b;  // Binary: 0110 (6 in decimal)
+   ```
+
+4. **NOT (`~`):**
+
+   - Performs a bitwise NOT operation.
+   - Inverts each bit (changes 1 to 0 and vice versa).
+
+   ```c
+   int a = 5;  // Binary: 0101
+   int result = ~a;  // Binary: 1010 (-6 in decimal, due to two's complement representation)
+   ```
+
+5. **Left Shift (`<<`):**
+
+   - Shifts the bits of a number to the left by a specified number of positions.
+   - Fills vacant positions with zeros.
+
+   ```c
+   int a = 5;  // Binary: 0101
+   int result = a << 2;  // Binary: 010100 (20 in decimal)
+   ```
+
+6. **Right Shift (`>>`):**
+
+   - Shifts the bits of a number to the right by a specified number of positions.
+   - Fills vacant positions with the sign bit (for signed integers) or zeros (for unsigned integers).
+
+   ```c
+   int a = 16;  // Binary: 10000
+   int result = a >> 2;  // Binary: 00100 (4 in decimal)
+   ```
+
+Keep in mind that the specific binary representation and behavior may vary based on the data type (e.g., `int`, `char`, `short`, etc.) and the system's architecture. Additionally, bitwise operations are often used in low-level programming, such as for optimizing certain algorithms or dealing with hardware interactions.
+
+**Ternary Operator**
+The ternary operator is a shorthand way of expressing an `if-else` statement in C. It is a concise way to write a simple conditional expression. The syntax of the ternary operator is:
+
+```c
+condition ? expression_if_true : expression_if_false;
+```
+
+The `condition` is evaluated first. If it is true, the entire expression evaluates to `expression_if_true`. Otherwise, it evaluates to `expression_if_false`.
+
+Here's an example to illustrate the use of the ternary operator:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int x = 10;
+    int y = 20;
+
+    // Using the ternary operator to find the maximum of x and y
+    int max = (x > y) ? x : y;
+
+    printf("The maximum value is: %d\n", max);
+
+    return 0;
+}
+```
+
+In this example, the condition `(x > y)` is evaluated. If `x` is greater than `y`, the value of `x` is assigned to `max`. Otherwise, the value of `y` is assigned to `max`. The result is then printed to the console.
+
+This is equivalent to the following `if-else` statement:
+
+```c
+int max;
+
+if (x > y) {
+    max = x;
+} else {
+    max = y;
+}
+```
+
+The ternary operator is particularly useful for short and simple conditional assignments, making the code more concise. However, it's important to use it judiciously, as overly complex expressions may reduce code readability.
+
+**sizeof**
+In C programming, the `sizeof` operator is used to determine the size (in bytes) of a variable or a data type. It returns the size as a `size_t` (an unsigned integer type).
+
+The syntax of the `sizeof` operator is as follows:
+
+```c
+sizeof(type)
+```
+
+Here, `type` can be a data type, a variable, or an expression.
+
+Here are a few examples:
+
+1. **Size of a Data Type:**
+
+   ```c
+   #include <stdio.h>
+
+   int main() {
+       printf("Size of int: %zu bytes\n", sizeof(int));
+       printf("Size of float: %zu bytes\n", sizeof(float));
+       printf("Size of char: %zu bytes\n", sizeof(char));
+
+       return 0;
+   }
+   ```
+
+   This program prints the sizes of `int`, `float`, and `char` data types.
+
+2. **Size of a Variable:**
+
+   ```c
+   #include <stdio.h>
+
+   int main() {
+       int num = 42;
+       printf("Size of num: %zu bytes\n", sizeof(num));
+
+       return 0;
+   }
+   ```
+
+   This program prints the size of the variable `num`.
+
+3. **Size of an Array:**
+
+   ```c
+   #include <stdio.h>
+
+   int main() {
+       int arr[5];
+       printf("Size of arr: %zu bytes\n", sizeof(arr));
+
+       return 0;
+   }
+   ```
+
+   This program prints the size of an array `arr` of five integers.
+
+4. **Size of a Structure:**
+
+   ```c
+   #include <stdio.h>
+
+   struct Point {
+       int x;
+       int y;
+   };
+
+   int main() {
+       struct Point p;
+       printf("Size of struct Point: %zu bytes\n", sizeof(struct Point));
+
+       return 0;
+   }
+   ```
+
+   This program prints the size of the `struct Point`.
+
+It's important to note that the size of a data type may vary depending on the system and compiler being used. The `sizeof` operator is a powerful tool for writing portable code, as it allows you to determine the size of data types at runtime.
+
+> **&**
+
+- The address of variable in a memory
+  - example
+    ```c
+    p = &c; /* p now holds the address in memory of variable c */
+    ```
+
+---
+
+## control structures
+
+### if
+
+```c
+if (expression)
+    [block] // executed if expression true
+```
+
+### if ... else
+
+```c
+if (expression)
+    [block1] // execute if expression true
+else
+    [block2] // execute if false
+```
+
+### if
+
+```c
+while (expression)
+    [block] // repeat the block untill expression becomes false
+```
+
+### if
+
+```c
+for (initialize; condition; update(increment, decrement))
+    [block] // repeate the block a specified number of times,until condition becomes false
+```
+
+### return
+
+```c
+return (expression); // return value of a function
+```
+
+> ends the functions and returns to the calling function
+> the return type should much the type of expression
+> any code after the return type will never be executed

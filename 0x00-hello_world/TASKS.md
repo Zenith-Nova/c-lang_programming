@@ -1,6 +1,6 @@
 # Task: 0-Preprocessor
 
-- A script that runs file through the preprocessor and save the result into another file
+- Write a script that runs file through the preprocessor and save the result into another file
 
   - **TODO:**
     1. File name is saved the variable `$CFILE`
