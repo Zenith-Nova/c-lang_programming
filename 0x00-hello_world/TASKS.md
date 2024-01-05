@@ -10,6 +10,40 @@
 
 - Write a script that compiled a C file but does not link.
   - **TODO:**
-    1.  The C file name will be saved in the variable CFILE
-    2.  The output should be named the same as the C file but with the extension `.o` instead of .c
-        - example main.c output -> main.o
+    1. File name is saved the variable `$CFILE`
+    2. The output should be named the same as the C file but with the extension `.o` instead of .c
+       - example main.c output -> main.o
+
+# Task: 2-assembler
+
+- Write a script that generates the assembly code of a C code and save it in an output
+  - **TODO:**
+    1. File name is saved the variable `$CFILE`
+    2. The output should be named the same as the C file but with the extension `.s` instead of .c
+       - example main.c output -> main.s
+
+# Task: 3-name
+
+- write a script that compiles a c file and creates an executable named `cisfun`
+  - **TODO:**
+    1. The c source file will be saved in the variable `$CFILE`
+    2. The output should be named `cisfun`
+       - example main.c output -> cisfun
+
+# Task: 4-puts
+
+- write a C program that prints exactly `Programming is like building a multilingual puzzle` followed by a new line
+  - **TOD:**
+    1. use the function `puts`
+    2. not alowed to use `printf`
+    3. should end with the value `0`
+
+# Task: 5-printf.c
+
+- Write a C program that prints exactly `with proper grammer, but the outcome is a piece of art` followed by a new line
+- **TODO**
+  1. use the function `printf`
+  2. not allowed to use `puts`
+  3. program should return `0`
+  4. should compile without warning using the `-Wall gcc` option
+

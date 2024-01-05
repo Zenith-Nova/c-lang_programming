@@ -1,5 +1,5 @@
 #!/bin/bash
 # Setting the environment variable CFILE to the value "main.c"
 export CFILE=main.c
-# Invoking the GCC compiler with the -c option to perform compilation
-gcc -c $CFILE
+# Invoking the GCC compiler to compile and save to file cisfun
+gcc $CFILE -o cisfun
