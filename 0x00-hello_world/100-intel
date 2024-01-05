@@ -1,0 +1,3 @@
+#!/bin/bash
+export CFILE=main.c
+gcc -S -Wall -Werror -Wextra -pedantic -std=gnu89 $CFILE

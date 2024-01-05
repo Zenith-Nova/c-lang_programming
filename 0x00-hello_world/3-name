@@ -2,4 +2,4 @@
 # Setting the environment variable CFILE to the value "main.c"
 export CFILE=main.c
 # Invoking the GCC compiler to compile and save to file cisfun
-gcc $CFILE -o cisfun
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 $CFILE -o cisfun

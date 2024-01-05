@@ -41,9 +41,24 @@
 # Task: 5-printf.c
 
 - Write a C program that prints exactly `with proper grammer, but the outcome is a piece of art` followed by a new line
-- **TODO**
-  1. use the function `printf`
-  2. not allowed to use `puts`
-  3. program should return `0`
-  4. should compile without warning using the `-Wall gcc` option
+  - **TODO**
+    1. use the function `printf`
+    2. not allowed to use `puts`
+    3. program should return `0`
+    4. should compile without warning using the `-Wall gcc` option
 
+# Task: 6-size.c
+
+- write a C program that prints the size of various types on the computer it is compiled and run on.
+  - **TODO:**
+    1. Warning are allowed
+    2. should return `0`
+    3. You might have to install the package `libc6-dev-i386` on your Linux to test the `-m32 gcc` option -:archlinux: `lib32-gcc-libs`
+
+# Task: 7-intel
+
+- write a script that generates the assembly code (intel syntax) of a C code and save it in an output file
+  - **TODO:**
+    1. The C file name will be saved in the variable `$CFILE`
+    2. The output file should be names as the C file but with the extension `.s`
+       1. main.c -> main.s

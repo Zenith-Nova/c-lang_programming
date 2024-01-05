@@ -104,8 +104,42 @@
 
 > **create the** _ 5-printf.c file_
 
-1. compile the  5-printf.c source file
+1. compile the 5-printf.c source file
    ```c
    gcc -Wall -Werror -Wextra -pedantic -std=gnu89  5-printf.c
    ```
-   > file: [ 5-printf.c]( 5-printf.c)
+   > file: [ 5-printf.c](5-printf.c)
+
+# Task: 6-size.c
+
+> **create the** _6-size.c file_
+
+1. compile the file
+   ```c
+   gcc 6-size.c -m32 -o size32 2> /tmp/32
+   ```
+   > file: [6-size.c](6-size.c)
+
+# Task: 100-intel
+
+> **create the **_100-intel_\*\* file
+
+1. export the variable system wide
+   ```bash
+   export CFILE=main.c
+   ```
+2. Compile the CFILE
+   ```bash
+   gcc -S $CFILE
+   ```
+3. change permission:
+   ```bash
+   chmod a+x 100-intel
+   ```
+4. execute the script
+
+   ```bash
+   ./100-intel
+   ```
+
+   > file: [100-intel](100-intel)

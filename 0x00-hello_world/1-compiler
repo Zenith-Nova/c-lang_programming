@@ -2,4 +2,4 @@
 # Setting the environment variable CFILE to the value "main.c"
 export CFILE=main.c
 # Invoking the GCC compiler with the -c option to perform compilation
-gcc -c $CFILE
+gcc -c -Wall -Werror -Wextra -pedantic -std=gnu89 $CFILE

@@ -2,4 +2,4 @@
 # Setting the environment variable CFILE to the value "main.c"
 export CFILE=main.c
 # Invoking the GCC compiler with the -E option to perform preprocessing and saving output to a file c
-gcc -E $CFILE -o c
+gcc -E -Wall -Werror -Wextra -pedantic -std=gnu89 $CFILE -o c
